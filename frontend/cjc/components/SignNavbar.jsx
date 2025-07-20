@@ -14,7 +14,7 @@ export const SignNavbar = () => {
                        <Link to="/Home">Home</Link>
                     </li>
                     <li className='hover:underline'>
-                       <Link to="/signin">Log In</Link>
+                       <Link to="/login">Log In</Link>
                     </li>
                     <li className='hover:underline'>
                         <Link to="/signup">Sign Up</Link>
