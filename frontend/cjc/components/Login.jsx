@@ -93,8 +93,8 @@ export const Login = () => {
                     {/*Function for forgor password*/}
 
                     <div className="text-right text-sm">
-                        <a href="#" className="text-indigo-500 hover:underline">
-                            Forgot password?
+                        <a className="text-indigo-500 hover:underline">
+                          <Link to="/reset">Forgot password?</Link>  
                         </a>
                     </div>
 
