@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ResetNavbar } from "./ResetNavbar";
+import{FaArrowLeft} from "react-icons/fa";
 
 export const MessageReset = () => {
     return(
@@ -8,12 +9,20 @@ export const MessageReset = () => {
         <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-indigo-200 to-indigo-900 px-4">
             
             <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm space-y-4">
-                <h1 className="text-xl font-bold text-center text-blue-900 mb-4">
-                    Reset your password
-                </h1>
+
+                <div className="flex items-center gap-12">
+                    <Link to="/login">
+                    <FaArrowLeft/>
+                    </Link>
+                    <h1 className="text-xl font-bold text-blue-900">Reset your password</h1>
+                </div>
+                
+                <div className="w-3"/>
 
                 <div className="text-center">
-                <p>Enter your email address or phone number to reset your password</p>
+                Enter your <span className="text-blue-800">email address </span> 
+                or<span className="text-blue-800"> phone number </span>to reset your password
+                
                 </div>                
 
                 <form className="space-y-4">
