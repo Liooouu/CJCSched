@@ -3,6 +3,7 @@ import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import {Signup} from '../components/Signup';
 import {Login} from '../components/Login';
+import { MessageReset } from '../components/MessageReset';
 
 const Home = () => {
   return (
@@ -75,6 +76,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Login />} />
+        <Route path="/reset" element={<MessageReset />} />
       </Routes>
     </Router>
   );
