@@ -18,7 +18,7 @@ export const Signup = () => {
             To become a part of our community, please sign up using personal information.
            </p>
           <div className="text-sm flex flex-wrap items-center space-x-2">
-            <span>Contact us with:</span>
+            <span>Connect with us:</span>
             <a
               href="https://www.facebook.com/cjcrsg"
               className="underline hover:text-blue-300"
