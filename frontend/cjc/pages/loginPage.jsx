@@ -94,7 +94,7 @@ export const Login = () => {
 
                     <div className="text-right text-sm">
                         <div className="text-indigo-500 hover:underline">
-                          <Link to="/reset">Forgot password?</Link>  
+                          <Link to="/MessageReset">Forgot password?</Link>  
                         </div>
                     </div>
 
