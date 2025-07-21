@@ -1,4 +1,4 @@
-import { LogNavbar } from "./LogNavbar";
+import { LogNavbar } from "../components/logNavbar";
 import {FcGoogle} from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
