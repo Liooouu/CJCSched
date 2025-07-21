@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
-import {Signup} from '../components/Signup';
-import {Login} from '../components/Login';
-import { MessageReset } from '../components/MessageReset';
+import {Signup} from '../pages/signUpPage';
+import {Login} from '../pages/loginPage';
+import { MessageReset } from '../pages/messageResetPage';
+import AdminPage from '../pages/adminPage';
 
 const Home = () => {
   return (
@@ -77,6 +78,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset" element={<MessageReset />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </Router>
   );
