@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { ResetNavbar } from "./ResetNavbar";
+import { ResetNavbar } from "../components/resetNavbar";
 import{FaArrowLeft} from "react-icons/fa";
 
-export const ResetPassword = () => {
+export const VerifyReset = () => {
     return(
         <>
         <ResetNavbar/>
@@ -10,30 +10,23 @@ export const ResetPassword = () => {
             
             <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm space-y-4">
 
-                <div className="flex items-center gap-12">
-                    <Link to="/VerifyReset">
+                <div className="flex items-center gap-24">
+                    <Link to="/MessageReset">
                     <FaArrowLeft/>
                     </Link>
-                    <h1 className="text-xl font-bold text-blue-900">Reset your password</h1>
+                    <h1 className="text-xl font-bold text-blue-900">Verify OTP</h1>
                 </div>
                 
                 <div className="w-3"/>
 
                 <div className="text-center">
-                <p>Enter your new password to reset your account access</p>
+               <p>Enter the OTP send to your email or phone number to proceed</p>
                 
                 </div>                
 
                 <form className="space-y-4">
                     <input
                     type="text"
-                    placeholder="Enter new password"
-                    className="w-full px-4 py-2 border rounded-md"
-                    />
-
-                    <input
-                    type="text"
-                    placeholder="Confirm new password"
                     className="w-full px-4 py-2 border rounded-md"
                     />
 
@@ -41,7 +34,7 @@ export const ResetPassword = () => {
                     type="submit"
                     className="w-full bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600 transition"
                     >
-                    <Link to="/Login">Reset</Link>
+                    <Link to="/ResetPassword">Verify</Link>
                     </button>
                 </form>
             </div>

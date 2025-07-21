@@ -5,6 +5,8 @@ import {Signup} from '../pages/signUpPage';
 import {Login} from '../pages/loginPage';
 import { MessageReset } from '../pages/messageResetPage';
 import AdminPage from '../pages/adminPage';
+import { VerifyReset } from '../pages/VerifyResetPage';
+import { ResetPassword } from '../pages/ResetPasswordPage';
 
 const Home = () => {
   return (
@@ -79,6 +81,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/reset" element={<MessageReset />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/MessageReset" element={<MessageReset />} />
+        <Route path="/VerifyReset" element={<VerifyReset />} />
+        <Route path="/ResetPassword" element={<ResetPassword />} />
       </Routes>
     </Router>
   );
