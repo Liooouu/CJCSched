@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { ResetNavbar } from "../components/resetNavbar";
+import { ResetNavbar } from "./ResetNavbar";
 import{FaArrowLeft} from "react-icons/fa";
 
-export const MessageReset = () => {
+export const ResetPassword = () => {
     return(
         <>
         <ResetNavbar/>
@@ -11,7 +11,7 @@ export const MessageReset = () => {
             <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm space-y-4">
 
                 <div className="flex items-center gap-12">
-                    <Link to="/login">
+                    <Link to="/VerifyReset">
                     <FaArrowLeft/>
                     </Link>
                     <h1 className="text-xl font-bold text-blue-900">Reset your password</h1>
@@ -20,15 +20,20 @@ export const MessageReset = () => {
                 <div className="w-3"/>
 
                 <div className="text-center">
-                Enter your <span className="text-blue-800">email address </span> 
-                or<span className="text-blue-800"> phone number </span>to reset your password
+                <p>Enter your new password to reset your account access</p>
                 
                 </div>                
 
                 <form className="space-y-4">
                     <input
                     type="text"
-                    placeholder="Email or Phone number"
+                    placeholder="Enter new password"
+                    className="w-full px-4 py-2 border rounded-md"
+                    />
+
+                    <input
+                    type="text"
+                    placeholder="Confirm new password"
                     className="w-full px-4 py-2 border rounded-md"
                     />
 
@@ -36,7 +41,7 @@ export const MessageReset = () => {
                     type="submit"
                     className="w-full bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600 transition"
                     >
-                    <Link to="/VerifyReset">Send OTP</Link>
+                    <Link to="/Login">Reset</Link>
                     </button>
                 </form>
             </div>
