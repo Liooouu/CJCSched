@@ -104,7 +104,7 @@ export const Login = () => {
                     type="submit"
                     className="w-full bg-indigo-400 text-white py-2 rounded-md hover:bg-indigo-500 transition"
                     >
-                    Login
+                    <Link to="/Home">Login</Link>
                     </button>
 
                     {/*Sign up function(Linked)*/}
