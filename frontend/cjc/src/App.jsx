@@ -4,8 +4,8 @@ import Footer from '../components/footer';
 import {Signup} from '../pages/signUpPage';
 import {Login} from '../pages/loginPage';
 import { MessageReset } from '../pages/messageResetPage';
-import { VerifyReset } from '../components/VerifyReset';
-import { ResetPassword } from '../components/ResetPassword';
+import { VerifyReset } from '../pages/VerifyResetPage';
+import { ResetPassword } from '../pages/ResetPasswordPage';
 
 const Home = () => {
   return (
