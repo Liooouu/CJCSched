@@ -3,6 +3,7 @@ import { Eye, EyeOff } from "lucide-react";
 import { Link } from 'react-router-dom';
 import { SignNavbar } from "../components/signNavbar";
 
+
 export const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
 
