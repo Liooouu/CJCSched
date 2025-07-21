@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ResetNavbar } from "./ResetNavbar";
+import { ResetNavbar } from "./resetNavbar";
 import{FaArrowLeft} from "react-icons/fa";
 
 export const VerifyReset = () => {
@@ -11,7 +11,7 @@ export const VerifyReset = () => {
             <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm space-y-4">
 
                 <div className="flex items-center gap-24">
-                    <Link to="/reset">
+                    <Link to="/MessageReset">
                     <FaArrowLeft/>
                     </Link>
                     <h1 className="text-xl font-bold text-blue-900">Verify OTP</h1>
