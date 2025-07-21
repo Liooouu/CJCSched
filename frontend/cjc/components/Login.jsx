@@ -93,9 +93,9 @@ export const Login = () => {
                     {/*Function for forgor password*/}
 
                     <div className="text-right text-sm">
-                        <a className="text-indigo-500 hover:underline">
+                        <div className="text-indigo-500 hover:underline">
                           <Link to="/reset">Forgot password?</Link>  
-                        </a>
+                        </div>
                     </div>
 
                     {/*Submit button(Log in)*/}
@@ -111,9 +111,7 @@ export const Login = () => {
 
                     <p className="text-sm text-center">
                         Don't have an account?
-                        <a className="text-indigo-600 hover:underline px-2">
-                           <Link to="/Signup">Sign Up</Link> 
-                        </a>
+                        <Link to="/Signup" className="text-indigo-600 hover:underline px-1">Sign Up</Link> 
                     </p>
                </form>
             </div>

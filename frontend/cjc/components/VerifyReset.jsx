@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ResetNavbar } from "./ResetNavbar";
 import{FaArrowLeft} from "react-icons/fa";
 
-export const MessageReset = () => {
+export const VerifyReset = () => {
     return(
         <>
         <ResetNavbar/>
@@ -10,25 +10,23 @@ export const MessageReset = () => {
             
             <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm space-y-4">
 
-                <div className="flex items-center gap-12">
-                    <Link to="/login">
+                <div className="flex items-center gap-24">
+                    <Link to="/reset">
                     <FaArrowLeft/>
                     </Link>
-                    <h1 className="text-xl font-bold text-blue-900">Reset your password</h1>
+                    <h1 className="text-xl font-bold text-blue-900">Verify OTP</h1>
                 </div>
                 
                 <div className="w-3"/>
 
                 <div className="text-center">
-                Enter your <span className="text-blue-800">email address </span> 
-                or<span className="text-blue-800"> phone number </span>to reset your password
+               <p>Enter the OTP send to your email or phone number to proceed</p>
                 
                 </div>                
 
                 <form className="space-y-4">
                     <input
                     type="text"
-                    placeholder="Email or Phone number"
                     className="w-full px-4 py-2 border rounded-md"
                     />
 
@@ -36,7 +34,7 @@ export const MessageReset = () => {
                     type="submit"
                     className="w-full bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600 transition"
                     >
-                    <Link to="/VerifyReset">Send OTP</Link>
+                    <Link to="/ResetPassword">Verify</Link>
                     </button>
                 </form>
             </div>
