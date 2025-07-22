@@ -1,12 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
+import AdminPage from '../pages/adminPage';
 import {Signup} from '../pages/signUpPage';
 import {Login} from '../pages/loginPage';
 import { MessageReset } from '../pages/messageResetPage';
+<<<<<<< HEAD
 import AdminPage from '../pages/adminPage';
 import { VerifyReset } from '../pages/VerifyResetPage';
 import { ResetPassword } from '../pages/ResetPasswordPage';
+=======
+import { VerifyReset } from '../pages/VerifyReset';
+import { ResetPassword } from '../pages/ResetPassword';
+
+>>>>>>> 12644f68d05405d51d0053db6ea2ab40e2a3cd7c
 
 const Home = () => {
   return (
@@ -79,7 +86,6 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/reset" element={<MessageReset />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/MessageReset" element={<MessageReset />} />
         <Route path="/VerifyReset" element={<VerifyReset />} />
