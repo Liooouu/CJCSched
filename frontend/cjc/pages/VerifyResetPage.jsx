@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom";
-<<<<<<<< HEAD:frontend/cjc/pages/VerifyResetPage.jsx
 import { ResetNavbar } from "../components/resetNavbar";
-========
-import { ResetNavbar } from "../components/ResetNavbar";
->>>>>>>> 12644f68d05405d51d0053db6ea2ab40e2a3cd7c:frontend/cjc/pages/VerifyReset.jsx
 import{FaArrowLeft} from "react-icons/fa";
 
 export const VerifyReset = () => {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ResetNavbar } from "../components/ResetNavbar";
+import { ResetNavbar } from "../components/resetNavbar";
 import{FaArrowLeft} from "react-icons/fa";
 
 export const MessageReset = () => {
