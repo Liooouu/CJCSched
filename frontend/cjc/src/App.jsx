@@ -8,6 +8,8 @@ import { MessageReset } from '../pages/messageResetPage';
 import { VerifyReset } from '../pages/VerifyResetPage'
 import { ResetPassword } from '../pages/ResetPassword';
 
+import { VerifyReset } from '../pages/VerifyResetPage';
+import { ResetPassword } from '../pages/ResetPasswordPage';
 
 const Home = () => {
   return (
