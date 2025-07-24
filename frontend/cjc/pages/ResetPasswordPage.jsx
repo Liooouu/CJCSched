@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import { ResetNavbar } from "../components/resetNavbar";
 import{FaArrowLeft} from "react-icons/fa";
-import { ResetNavbar } from "../components/ResetNavbar";
 
 export const ResetPassword = () => {
     return(
