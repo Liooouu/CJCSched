@@ -5,7 +5,7 @@ import AdminPage from '../pages/adminPage';
 import {Signup} from '../pages/signUpPage';
 import {Login} from '../pages/loginPage';
 import { MessageReset } from '../pages/messageResetPage';
-import { VerifyReset } from '../pages/VerifyResetPage';
+import { VerifyReset } from '../pages/VerifyResetPage'
 import { ResetPassword } from '../pages/ResetPasswordPage';
 
 const Home = () => {
