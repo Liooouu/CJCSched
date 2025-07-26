@@ -16,7 +16,7 @@ export const Signup = () => {
         <div className="text-white flex flex-col justify-center">
           <h1 className="text-3xl font-bold mb-4">Create your account</h1>
            <p className="mb-6">
-            To become a part of our community, please sign up using personal information.
+            To become a part of our community, please sign up using your personal information.
            </p>
           <div className="text-sm flex flex-wrap items-center space-x-2">
             <span>Connect with us:</span>
@@ -42,7 +42,7 @@ export const Signup = () => {
         </div>
 
         <div className="bg-white rounded-xl shadow-lg p-8">
-          <h2 className="text-2xl font-semibold mb-6 text-center">Sign up</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center">Sign Up</h2>
 
           <form className="space-y-6">
             <input
@@ -99,14 +99,14 @@ export const Signup = () => {
               type="submit"
               className="w-full bg-indigo-200 hover:bg-indigo-500 text-indigo-900 font-semibold py-2 rounded-md"
             >
-              Signup
+              Sign Up
             </button>
           </form>
 
           <p className="mt-4 text-sm text-center">
             Already have an account?{" "}
-            <a className="text-blue-600 underline">
-              <Link to="/login">Login</Link>
+            <a className="text-indigo-600 hover:underline px-1">
+              <Link to="/login">Log in</Link>
             </a>
           </p>
         </div>
