@@ -13,11 +13,11 @@ const Home = () => {
     <>
     <Navbar/>
       <main className="flex justify-center items-center flex-col font-monstserrat text-[#364687] lg:text-4xl md:text-3xl font-bold">
-        <div className="container flex justify-center items-center flex-col h-[50vh] w-max">
-          <p className="sm:text-2xl font-semibold">WELCOME TO </p>
-          <p>CHURCH OF JESUS CHRIST</p>
-          <p>THE RISEN SON OF GOD PHIL.INC.</p>
-          <p className="sm:text-2xl font-semibold">ATTENDANCE SYSTEM</p>
+        <div className="container flex justify-center items-center flex-col h-[50vh] w-max md:space-y-2 lg:space-y-4">
+          <p className="sm:text-2xl lg:text-3xl font-semibold">WELCOME TO </p>
+          <p className='text-xl sm:text-3xl md:text-4xl lg:text-5xl'>CHURCH OF JESUS CHRIST</p>
+          <p className='text-xl sm:text-3xl md:text-4xl lg:text-5xl'>THE RISEN SON OF GOD PHIL. INC.</p>
+          <p className="sm:text-2xl lg:text-3xl font-semibold">ATTENDANCE SYSTEM</p>
         </div>
         <div>
           <img src="/COVER.png" alt="CJCRSG Cover Photo" />
@@ -32,22 +32,22 @@ const Home = () => {
 
       <div className="flex sm:flex-row flex-col justify-evenly h-[600px] text-[#364687] lg:text-4xl md:text-3xl font-bold font-monstserrat bg-[#364687]/10 mb-3">
         <div className="container flex justify-center items-center flex-col">
-          <h2 className="font-light text-2xl">Connect with us:</h2>
+          <h2 className="font-light text-2xl md:text-3xl lg:text-4xl">Connect with us:</h2>
 
           <div className="flex flex-row justify-center items-center text-xs font-light">
             <div className="flex flex-col justify-center items-center">
               <img src="/FACEBOOK.png" alt="facebook_icon" className="w-full h-full object-contain" />
-              <p>Facebook</p>
+              <p className="sm:text-xl">Facebook</p>
             </div>
 
             <div className="flex flex-col justify-center items-center">
               <img src="/GMAIL.png" alt="gmail_icon" className="w-full h-full object-contain" />
-              <p>Gmail</p>
+              <p className="sm:text-xl">Gmail</p>
             </div>
 
             <div className="flex flex-col justify-center items-center">
               <img src="/CONTACT.png" alt="contact_icon" className="w-full h-full object-contain" />
-              <p>Contact</p>
+              <p className="sm:text-xl">Contact</p>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ const Home = () => {
 
             <h2 className="text-2xl sm:text-5xl">Vision</h2>
             <div className='container no-wrap p-4'>
-              <p className="font-light text-[20px]">To bring people to God</p>
+              <p className="font-light text-[20px]">To bring people to God.</p>
             </div>
           </div>
         </div>
