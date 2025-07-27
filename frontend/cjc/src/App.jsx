@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
     <Navbar/>
-      <main className="flex justify-center items-center flex-col font-monstserrat text-[#364687] lg:text-4xl md:text-3xl font-bold">
+      <main className="flex justify-center items-center flex-col font-montserrat text-[#364687] lg:text-4xl md:text-3xl font-bold">
         <div className="container flex justify-center items-center flex-col h-[50vh] w-max md:space-y-2 lg:space-y-4">
           <p className="sm:text-2xl lg:text-3xl font-semibold">WELCOME TO </p>
           <p className='text-xl sm:text-3xl md:text-4xl lg:text-5xl'>CHURCH OF JESUS CHRIST</p>
@@ -24,13 +24,13 @@ const Home = () => {
         </div>
       </main>
 
-      <div className="justify-center flex items-center flex-col text-[#364687] lg:text-4xl sm:text-4xl font-bold font-monstserrat h-[400px]">
+      <div className="justify-center flex items-center flex-col text-[#364687] lg:text-4xl sm:text-4xl font-bold font-montserrat h-[400px]">
         <h2 className="font-medium text-3xl">Service starts at</h2>
         <p>9:00am - Morning Service</p>
         <p>2:00pm - Youth Service</p>
       </div>
 
-      <div className="flex sm:flex-row flex-col justify-evenly h-[600px] text-[#364687] lg:text-4xl md:text-3xl font-bold font-monstserrat bg-[#364687]/10 mb-3">
+      <div className="flex sm:flex-row flex-col justify-evenly h-[600px] text-[#364687] lg:text-4xl md:text-3xl font-bold font-montserrat bg-[#364687]/10 mb-3">
         <div className="container flex justify-center items-center flex-col">
           <h2 className="font-light text-2xl md:text-3xl lg:text-4xl">Connect with us:</h2>
 

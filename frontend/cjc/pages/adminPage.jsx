@@ -7,7 +7,7 @@ const AdminPage = () => {
     <>
       <AdminNavbar/>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-[600px] md:h-[300px] font-monstserrat text-[#364687] px-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-[600px] md:h-[300px] font-montserrat text-[#364687] px-4">
        
         <div className="md:col-span-5">
           <div className="flex flex-col justify-center items-center h-full gap-y-5 text-center md:text-left">
@@ -31,7 +31,7 @@ const AdminPage = () => {
         </div>
 
 
-          <div className='border-y-1 border-black/5 flex justify-evenly items-center font-monstserrat text-[#364687] h-[100px] shadow-sm'>
+          <div className='border-y-1 border-black/5 flex justify-evenly items-center font-montserrat text-[#364687] h-[100px] shadow-sm'>
             <div className='flex justify-evenly items-center flex-col'>
               <p className='font-bold text-2xl'>33</p>
               <p>New Attendees This Week</p>
@@ -48,7 +48,7 @@ const AdminPage = () => {
             </div>
           </div>
 
-          <div className="font-monstserrat text-[#364687] h-[100px] flex items-center justify-center">
+          <div className="font-montserrat text-[#364687] h-[100px] flex items-center justify-center">
             <div className="flex items-center justify-between container h-full w-full px-4 gap-x-4">
               
              

@@ -47,7 +47,7 @@ export const Signup = () => {
           <form className="space-y-6">
             <input
               type="text"
-              placeholder="Full name (Ex: Juan Dela Cruz)"
+              placeholder="Full Name (Ex: Juan Dela Cruz)"
               className="w-full px-4 py-2 border rounded-md"
             />
             <input
