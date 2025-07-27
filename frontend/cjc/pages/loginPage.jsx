@@ -15,7 +15,7 @@ export const Login = () => {
 
       <LogNavbar/>
        <div className="min-h-screen flex items-center justify-center bg-gradient-to-l from-indigo-300 to-indigo-500">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap- w-full max-w-5xl p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap- w-full max-w-5xl p-6 font-montserrat">
 
             <div className="text-white flex flex-col justify-center">
                 <h1 className="text-4xl font-bold mb-4">Enter Your Account</h1>

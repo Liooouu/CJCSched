@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className='flex flex-row p-4 text-[#364687] lg:text-xl bg-white '>
             <div className='container flex flex-row justify-start items-center gap-2'>
                 <img src="/LOGO.png" alt="CJCRSG LOGO" className='w-[50px] h-[50px]'/>
-                <p className='font-montserrat '>CJCRSG PHIL. INC.</p>
+                <p className='font-montserrat '>CJCRSG PHILS. INC.</p>
             </div>
             <div className='container flex flex-row justify-evenly items-center'>
                 <ul className='container flex flex-row justify-evenly font-montserrat'>

@@ -11,7 +11,7 @@ export const Signup = () => {
     <>
     <SignNavbar/>
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-200 to-indigo-900 text-gray-800">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-30 w-full max-w-5xl p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-30 w-full max-w-5xl p-6 font-montserrat">
         
         <div className="text-white flex flex-col justify-center">
           <h1 className="text-3xl font-bold mb-4">Create your account</h1>
@@ -104,7 +104,7 @@ export const Signup = () => {
           </form>
 
           <p className="mt-4 text-sm text-center">
-            Already have an account?{" "}
+            Already have an account?{""}
             <a className="text-indigo-600 hover:underline px-1">
               <Link to="/login">Log in</Link>
             </a>
