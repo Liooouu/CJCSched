@@ -16,7 +16,7 @@ const Home = () => {
         <div className="container flex justify-center items-center flex-col h-[50vh] w-max md:space-y-2 lg:space-y-4">
           <p className="sm:text-2xl lg:text-3xl font-semibold">WELCOME TO </p>
           <p className='text-xl sm:text-3xl md:text-4xl lg:text-5xl'>CHURCH OF JESUS CHRIST</p>
-          <p className='text-xl sm:text-3xl md:text-4xl lg:text-5xl'>THE RISEN SON OF GOD PHIL. INC.</p>
+          <p className='text-xl sm:text-3xl md:text-4xl lg:text-5xl'>THE RISEN SON OF GOD PHILS. INC.</p>
           <p className="sm:text-2xl lg:text-3xl font-semibold">ATTENDANCE SYSTEM</p>
         </div>
         <div>
