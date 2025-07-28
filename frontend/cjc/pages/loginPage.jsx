@@ -1,4 +1,4 @@
-import { LogNavbar } from "../components/logNavbar";
+import { LogNavbar } from "../components/LogNavbar";
 import {FcGoogle} from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
@@ -53,7 +53,7 @@ export const Login = () => {
 
             <div className="bg-white rounded-2xl p-8 shadow-md w-full max-w-lg mx-auto">
                 <h2 className="text-2xl font-semibold text-center mb-6">Log In</h2>
-                <form className="space-y-4 text-lg lg:text-xl">
+                <form className="space-y-4 text-lg lg:text-lg">
                     
                     {/*Button for google*/}
 
