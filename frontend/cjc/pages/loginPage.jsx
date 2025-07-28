@@ -1,4 +1,4 @@
-import { LogNavbar } from "../components/logNavbar";
+import { LogNavbar } from "../components/LogNavbar";
 import {FcGoogle} from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
@@ -31,15 +31,17 @@ export const Login = () => {
                             Facebook
                         </a>
                         <a 
-                        href="#" 
+                        href="mailto:cjcrsgonline@gmail.com"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="underline hover:text-blue-300"
                         >
                             Gmail
                         </a>
                         <a 
-                        href="#" 
+                        href="mailto:cjcrsgonline@gmail.com"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="underline hover:text-blue-300"
                         >
                             Contact
@@ -51,13 +53,13 @@ export const Login = () => {
 
             <div className="bg-white rounded-2xl p-8 shadow-md w-full max-w-lg mx-auto">
                 <h2 className="text-2xl font-semibold text-center mb-6">Log In</h2>
-                <form className="space-y-4 text-lg lg:text-xl">
+                <form className="space-y-4 text-lg lg:text-lg">
                     
                     {/*Button for google*/}
 
                     <button 
                     type="button"
-                    className="w-full flex items-center justify-center gap-2 border rounded-xl border-gray-300 py-2 px-4 rounded-mg hover:bg-gray-100 transition"
+                    className="w-full flex items-center justify-center gap-2 border rounded-xl border-gray-300 py-2 px-4 rounded-mg hover:bg-gray-100 transition cursor-pointer"
                     >
                         <FcGoogle className="w-5 h-5" />
                         <span>Log in with Google</span>
@@ -102,7 +104,7 @@ export const Login = () => {
 
                     <button 
                     type="submit"
-                    className="w-full bg-indigo-400 text-white font-semibold py-2 rounded-xl hover:bg-indigo-500 transition"
+                    className="w-full bg-indigo-400 text-white font-semibold py-2 rounded-xl hover:bg-indigo-500 transition cursor-pointer"
                     >
                     <Link to="/admin">Log In</Link>
                     </button>
