@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { Link } from 'react-router-dom';
-import { SignNavbar } from "../components/signNavbar";
+import { SignNavbar } from "../components/SignNavbar";
 
 
 export const Signup = () => {
@@ -18,7 +18,7 @@ export const Signup = () => {
            <p className="text-xl lg:text-2xl mb-6">
             To become a part of our community, please sign up using your personal information.
            </p>
-          <div className="text-sm flex flex-wrap items-center space-x-2 mt-0 md:mt-64">
+          <div className="text-sm flex flex-wrap items-center gap-4 mt-0 md:mt-64">
             <span>Connect with us:</span>
             <a
               href="https://www.facebook.com/cjcrsg"
@@ -29,12 +29,16 @@ export const Signup = () => {
               Facebook
             </a>
             <a 
-              href="#" 
+              href="mailto:cjcrsgonline@gmail.com" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="underline hover:text-blue-300">
               Gmail
             </a>
             <a 
-              href="#" 
+              href="mailto:cjcrsgonline@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="underline hover:text-blue-300">
               Contact
             </a>
@@ -44,7 +48,7 @@ export const Signup = () => {
         <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-lg mx-auto">
           <h2 className="text-2xl font-semibold mb-6 text-center">Sign Up</h2>
 
-          <form className="space-y-6 text-lg lg:text-xl">
+          <form className="space-y-6 text-lg lg:text-lg">
             <input
               type="text"
               placeholder="Full Name (Ex: Juan Dela Cruz)"
@@ -61,18 +65,7 @@ export const Signup = () => {
               className="w-full px-4 py-2 border rounded-xl"
             />
 
-            <div className="flex items-center space-x-4">
-              <span>Gender:</span>
-              <label className="flex items-center space-x-1">
-                <input type="radio" name="gender" value="female" />
-                <span>Female</span>
-              </label>
-
-              <label className="flex items-center space-x-1">
-                <input type="radio" name="gender" value="male" />
-                <span>Male</span>
-              </label>
-            </div>
+            <GenderSelect />
 
             <input
               type="email"
@@ -97,7 +90,7 @@ export const Signup = () => {
 
             <button
               type="submit"
-              className="w-full bg-indigo-200 hover:bg-indigo-500 text-indigo-900 font-semibold py-2 rounded-xl"
+              className="w-full bg-indigo-200 hover:bg-indigo-500 text-indigo-900 font-semibold py-2 rounded-xl cursor-pointer"
             >
               Sign Up
             </button>
@@ -113,5 +106,40 @@ export const Signup = () => {
       </div>
     </div>
     </>
+  );
+};
+
+export const GenderSelect = () => {
+  const [selectedGender, setSelectedGender] = useState("");
+
+  const handleCheckboxChange = (value) => {
+    if (selectedGender === value) {
+      setSelectedGender(""); // Uncheck if clicked again
+    } else {
+      setSelectedGender(value);
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center">
+      <span className="text-lg lg:text-xl font-medium mb-2">Gender</span>
+      <div className="flex space-x-8">
+        <label className="flex items-center space-x-2 text-lg">
+          <input type="checkbox" name="gender" value="female" checked={selectedGender ==="female"}
+            onChange={() => handleCheckboxChange("female")}
+            className="w-6 h-6 border-2 border-gray-400 rounded cursor-pointer"
+          />
+          <span>Female</span>
+        </label>
+
+        <label className="flex items-center space-x-2 text-lg">
+          <input type="checkbox" name="gender" value="male" checked={selectedGender === "male"}
+            onChange={() => handleCheckboxChange("male")}
+            className="w-6 h-6 border-2 border-gray-400 rounded cursor-pointer"
+          />
+          <span>Male</span>
+        </label>
+      </div>
+    </div>
   );
 };
