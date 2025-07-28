@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Footer } from '../components/footer';
 import { Eye, EyeOff } from "lucide-react";
 import { Link } from 'react-router-dom';
 import { SignNavbar } from "../components/SignNavbar";
@@ -48,7 +49,7 @@ export const Signup = () => {
         <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-lg mx-auto">
           <h2 className="text-2xl font-semibold mb-6 text-center">Sign Up</h2>
 
-          <form className="space-y-6 text-lg lg:text-lg">
+          <form className="space-y-4 text-lg lg:text-lg">
             <input
               type="text"
               placeholder="Full Name (Ex: Juan Dela Cruz)"
@@ -105,6 +106,7 @@ export const Signup = () => {
         </div>
       </div>
     </div>
+    <Footer />
     </>
   );
 };

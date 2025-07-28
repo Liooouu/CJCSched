@@ -1,4 +1,5 @@
 import { LogNavbar } from "../components/LogNavbar";
+import { Footer } from '../components/footer';
 import {FcGoogle} from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
@@ -119,6 +120,7 @@ export const Login = () => {
             </div>
          </div> 
        </div>
+       <Footer />
     </>
   );
 }
