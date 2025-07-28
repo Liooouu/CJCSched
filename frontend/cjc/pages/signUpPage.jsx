@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { Link } from 'react-router-dom';
-import { SignNavbar } from "../components/signNavbar";
+import { SignNavbar } from "../components/SignNavbar";
 
 
 export const Signup = () => {

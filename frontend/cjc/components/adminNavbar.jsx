@@ -13,7 +13,7 @@ const adminNavbar = () => {
             <div className='container hidden flex-row justify-evenly items-center sm:flex flex-2/3'>
                 <ul className='container flex flex-row justify-evenly font-montserrat items-center'>
                     <li className='hover:underline'>
-                       <Link to="/Home">Dashboard</Link>
+                       <Link to="/home">Dashboard</Link>
                     </li>
                     <li className='hover:underline'>
                        <Link to="/login">Announcement</Link>
