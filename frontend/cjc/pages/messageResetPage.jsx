@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ResetNavbar } from "../components/resetNavbar";
+import { ResetNavbar } from "../components/ResetNavbar";
 import{FaArrowLeft} from "react-icons/fa";
 
 export const MessageReset = () => {
@@ -8,7 +8,7 @@ export const MessageReset = () => {
         <ResetNavbar/>
         <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-indigo-200 to-indigo-900 px-4">
             
-            <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm space-y-4">
+            <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm space-y-4 font-montserrat">
 
                 <div className="flex items-center gap-12">
                     <Link to="/login">
@@ -34,14 +34,14 @@ export const MessageReset = () => {
 
                     <button 
                     type="submit"
-                    className="w-full bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600 transition"
+                    className="w-full bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600 transition cursor-pointer"
                     >
                     <Link to="/VerifyReset">Send OTP</Link>
                     </button>
                 </form>
             </div>
 
-            <div className="absolute bottom-4 text-white text-sm flex flex-wrap justify-center gap-2">
+            <div className="absolute bottom-4 text-white text-sm flex flex-wrap justify-center gap-2 font-montserrat">
                 <span>Connect with us:</span>
                 <a
                 href="https://www.facebook.com/cjcrsg"
@@ -51,19 +51,19 @@ export const MessageReset = () => {
                 >
                     Facebook
                 </a>
-                <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-blue-300"
+                <a 
+                    href="mailto:cjcrsgonline@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-blue-300"
                 >
                     Gmail
                 </a>
-                <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-blue-300"
+                <a 
+                    href="mailto:cjcrsgonline@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-blue-300"
                 >
                     Contact
                 </a>
