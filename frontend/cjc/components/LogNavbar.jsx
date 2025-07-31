@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export const LogNavbar = () => {
   return (
     <nav>
-        <div className='flex flex-row p-4 md:text-lg lg:text-xl text-[#f1f2f6] bg-gradient-to-l from-indigo-300 to-indigo-500 '>
+        <div className='flex flex-row p-4 md:text-lg lg:text-xl text-white bg-gradient-to-l from-indigo-300 to-indigo-500 '>
             <div className='container flex flex-row justify-start items-center gap-4 pl-12'>
                 <img src="/W_LOGO.png" alt="CJCRSG LOGO" className='w-[50px] h-[50px]'/>
                 <p className='font-montserrat '>CJCRSG PHILS. INC.</p>
