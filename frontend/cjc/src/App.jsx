@@ -24,10 +24,10 @@ const Home = () => {
         </div>
       </main>
 
-      <div className="justify-center flex items-center flex-col text-[#364687] lg:text-4xl sm:text-4xl font-bold font-montserrat h-[400px]">
-        <h2 className="font-medium text-3xl">Service starts at</h2>
-        <p>9:00am - Morning Service</p>
-        <p>2:00pm - Youth Service</p>
+      <div className="justify-center flex items-center flex-col text-[#364687] lg:space-y-2 lg:text-4xl sm:text-2xl text-xl font-bold font-montserrat h-[400px]">
+        <h2 className="font-medium text-xl lg:text-3xl">Service starts at</h2>
+        <p>9:00 AM - Morning Service</p>
+        <p>2:00 PM - Youth Service</p>
       </div>
 
       <div className="flex sm:flex-row flex-col justify-evenly h-[600px] text-[#364687] lg:text-4xl md:text-3xl font-bold font-montserrat bg-[#364687]/10 mb-3">

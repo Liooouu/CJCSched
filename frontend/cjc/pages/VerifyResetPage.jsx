@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ResetNavbar } from "../components/ResetNavbar";
-import{FaArrowLeft} from "react-icons/fa";
+import { Footer } from '../components/footer'
+import { FaArrowLeft } from "react-icons/fa";
 
 export const VerifyReset = () => {
     return(
@@ -39,7 +40,7 @@ export const VerifyReset = () => {
                 </form>
             </div>
 
-            <div className="absolute bottom-4 text-white text-sm flex flex-wrap justify-center gap-2 font-montserrat">
+            <div className="absolute bottom-4 text-white text-sm flex flex-wrap justify-center gap-4 font-montserrat">
                 <span>Connect with us:</span>
                 <a
                 href="https://www.facebook.com/cjcrsg"
@@ -67,6 +68,7 @@ export const VerifyReset = () => {
                 </a>
             </div>
         </div>
+        <Footer />
         </>
     );
 }
