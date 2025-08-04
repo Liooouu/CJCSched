@@ -9,6 +9,7 @@ app.use(express.json())
 app.use('/user', userRoutes)
 app.use('/auth', authRoutes )
 
+
 app.get('/', ( req , res ) => {
    res.send('API is running')
 })
