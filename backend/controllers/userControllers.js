@@ -26,14 +26,22 @@ const getUsers = (req, res) => {
 
 }
 const getAllUsers = (req,res)=> {
-    res.status(200).json(database)
+    if(!database.length){
+        return res.status(200).json({massage:"no currently users right now"})
+    }
+    res.status(200).json({message:"This is all the users",database})
 }
+
+
 const createUsers = (req,res)=> {
     const {name, email, password} = req.body
 
     try{
         if(!name || !email || !password){
             throw new Error("Fill up the missing fields!");
+        }
+        if(database.find(e => e.email === email)){
+            return res.status(404).json({message:"Email already exists, use another email address"})
         }
 
         const newUsers = {
@@ -44,7 +52,7 @@ const createUsers = (req,res)=> {
         }
 
         database.push(newUsers)
-        res.status(200).json({message: "users succesfully created", user:newUsers})
+        res.status(200).json({message: "users succesfully created", user: newUsers})
 
     }catch(e){
         res.status(404).json({message: "failed to create", error:e.message})
