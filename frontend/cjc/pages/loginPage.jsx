@@ -15,7 +15,7 @@ export const Login = () => {
      {/*this side is for texts along with navbar*/}
 
       <Navbar/>
-       <div className="min-h-screen flex items-center justify-center bg-gradient-to-l from-indigo-300 to-indigo-500">
+       <div className="min-h-screen flex items-center justify-center bg-gradient-to-l from-indigo-400 to-indigo-900">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-15 lg:gap-30 w-full max-w-screen-xl p-6 font-montserrat">
 
             <div className="text-white flex flex-col justify-center items-center text-center">
@@ -54,13 +54,13 @@ export const Login = () => {
 
             <div className="bg-white rounded-2xl p-8 shadow-md w-full max-w-lg mx-auto">
                 <h2 className="text-2xl font-semibold text-center mb-6">Log In</h2>
-                <form className="space-y-4 text-lg lg:text-lg">
+                <form className="space-y-4 text-sm lg:text-md">
                     
                     {/*Button for google*/}
 
                     <button 
                     type="button"
-                    className="w-full flex items-center justify-center gap-2 border rounded-xl border-gray-300 py-2 px-4 rounded-mg hover:bg-gray-100 transition cursor-pointer"
+                    className="w-full flex items-center justify-center gap-2 text-lg border rounded-xl border-gray-300 py-2 px-4 rounded-mg hover:bg-gray-100 transition cursor-pointer"
                     >
                         <FcGoogle className="w-5 h-5" />
                         <span>Log in with Google</span>
@@ -71,7 +71,7 @@ export const Login = () => {
                     <input 
                     type="email" 
                     placeholder="Email" 
-                    className="w-full px-4 py-2 border rounded-xl"
+                    className="w-full px-4 py-2 border rounded-lg"
                     /> 
 
                     {/*input field for password*/}
@@ -81,7 +81,7 @@ export const Login = () => {
                     <input 
                     type={showPassword ? 'text' : 'password'}
                     placeholder="Password" 
-                    className="w-full px-4 py-2 border rounded-xl"
+                    className="w-full px-4 py-2 border rounded-lg"
                     /> 
 
                     <button
@@ -95,7 +95,7 @@ export const Login = () => {
 
                     {/*Function for forgot password*/}
 
-                    <div className="text-right text-sm lg:text-lg">
+                    <div className="text-right text-sm lg:text-md">
                         <div className="text-indigo-500 hover:underline">
                           <Link to="/messageReset">Forgot password?</Link>  
                         </div>
@@ -105,14 +105,14 @@ export const Login = () => {
 
                     <button 
                     type="submit"
-                    className="w-full bg-indigo-400 text-white font-semibold py-2 rounded-xl hover:bg-indigo-500 transition cursor-pointer"
+                    className="w-full bg-indigo-400 text-white text-lg font-semibold py-2 rounded-xl hover:bg-indigo-500 transition cursor-pointer"
                     >
                     <Link to="/admin">Log In</Link>
                     </button>
 
                     {/*Sign up function(Linked)*/}
 
-                    <p className="mt-4 text-sm lg:text-lg text-center">
+                    <p className="text-sm lg:text-md text-center">
                         Don't have an account?
                         <Link to="/Signup" className="text-indigo-600 hover:underline px-1">Sign up</Link> 
                     </p>
