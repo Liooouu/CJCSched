@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { ResetNavbar } from "../components/ResetNavbar";
-import { Footer } from '../components/footer'
+import Navbar from "../components/navbar";
+import Footer from '../components/footer'
 import { FaArrowLeft } from "react-icons/fa";
 
 export const MessageReset = () => {
     return(
         <>
-        <ResetNavbar/>
+        <Navbar/>
         <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-indigo-200 to-indigo-900 px-4">
             
             <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm space-y-4 font-montserrat">
@@ -37,7 +37,7 @@ export const MessageReset = () => {
                     type="submit"
                     className="w-full bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600 transition cursor-pointer"
                     >
-                    <Link to="/VerifyReset">Send OTP</Link>
+                    <Link to="/verifyReset">Send OTP</Link>
                     </button>
                 </form>
             </div>
