@@ -1,6 +1,6 @@
-import { LogNavbar } from "../components/LogNavbar";
-import { Footer } from '../components/footer';
-import {FcGoogle} from 'react-icons/fc';
+import Navbar from "../components/navbar";
+import Footer from '../components/footer';
+import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
@@ -14,7 +14,7 @@ export const Login = () => {
 
      {/*this side is for texts along with navbar*/}
 
-      <LogNavbar/>
+      <Navbar/>
        <div className="min-h-screen flex items-center justify-center bg-gradient-to-l from-indigo-300 to-indigo-500">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-15 lg:gap-30 w-full max-w-screen-xl p-6 font-montserrat">
 
@@ -97,7 +97,7 @@ export const Login = () => {
 
                     <div className="text-right text-sm lg:text-lg">
                         <div className="text-indigo-500 hover:underline">
-                          <Link to="/MessageReset">Forgot password?</Link>  
+                          <Link to="/messageReset">Forgot password?</Link>  
                         </div>
                     </div>
 

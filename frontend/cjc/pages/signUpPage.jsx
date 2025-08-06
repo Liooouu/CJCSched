@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Footer } from '../components/footer';
-import { Eye, EyeOff } from "lucide-react";
+import Navbar from "../components/navbar";
+import Footer from '../components/footer';
 import { Link } from 'react-router-dom';
-import { SignNavbar } from "../components/SignNavbar";
+import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 
 
 export const Signup = () => {
@@ -10,7 +10,7 @@ export const Signup = () => {
 
   return (
     <>
-    <SignNavbar/>
+    <Navbar/>
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-200 to-indigo-900 text-gray-800">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-15 lg:gap-30 max-w-screen-xl p-6 font-montserrat">
         
