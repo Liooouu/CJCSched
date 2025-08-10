@@ -1,4 +1,4 @@
-export const Footer = () => {
+const Footer = () => {
 
     const thisYear = new Date().getFullYear()
   return (
