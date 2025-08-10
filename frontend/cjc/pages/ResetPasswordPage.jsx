@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import { ResetNavbar } from "../components/ResetNavbar";
-import { Footer } from '../components/footer'
+import Navbar from "../components/navbar";
+import Footer from '../components/footer'
 import { FaArrowLeft } from "react-icons/fa";
 
 export const ResetPassword = () => {
     return(
         <>
-        <ResetNavbar/>
+        <Navbar/>
         <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-indigo-200 to-indigo-900 px-4">
             
             <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm space-y-4 font-montserrat">
 
                 <div className="flex items-center gap-12">
-                    <Link to="/VerifyReset">
+                    <Link to="/verifyReset">
                     <FaArrowLeft/>
                     </Link>
                     <h1 className="text-xl font-bold text-blue-900">Reset your password</h1>
