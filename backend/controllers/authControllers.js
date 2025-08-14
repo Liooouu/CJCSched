@@ -1,80 +1,62 @@
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const pool = require("../db");
 
-let UsersDatabase = []
+const jwtSecret = process.env.JWT_SECRET || "supersecret";
 
+// Register
+exports.createUsersAccount = async (req, res) => {
+  try {
+    const { name, email, password, contact, address, gender } = req.body;
 
-function generateToken (user)  {
-    const refreshToken = jwt.sign({id: user.id}, process.env.REFRESH_TOKEN, {expiresIn: '7d'})
-    const accessToken = jwt.sign({id: user.id}, process.env.JWT_TOKEN_SECRET, {expiresIn: '1d'})
-    return {accessToken, refreshToken}
-}
-
-
-
-
-
-const createUsersAccount = async (req,res)=> {
-    const {name, email, password} = req.body
-    if(!name || !email || !password){
-        return res.status(400).json({message: "Please fill all fields"})
-    }
-    if(!email.includes("@")){
-        return res.status(400).json({message: "Please enter a valid email"})
+    if (!name || !email || !password) {
+      return res.status(400).json({ message: "Name, email, and password are required" });
     }
 
-
-    const userExists = UsersDatabase.find(user => user.email === email)
-    if(userExists) {
-        return res.status(400).json({message: "User already exists"})
-    }
-    const hashPassword = await bcrypt.hash(password,15)
-    if(!hashPassword) {
-        return res.status(500).json({message: "Error hashing password"})
+    const userExists = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
+    if (userExists.rows.length > 0) {
+      return res.status(400).json({ message: "Email already in use" });
     }
 
-    const newUser ={
-        email,
-        name,
-        password:hashPassword
-    }
-    UsersDatabase.push(newUser)
-    if(!UsersDatabase.includes(newUser)) {
-        return res.status(500).json({message: "Error creating user account"})
-    }
-    return res.status(201).json({message: "User account created successfully"} )
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-}
-const loginUserAccount = (req,res)=> {
-    const {email,password} = req.body
-    if(!email || !password) {
-        return res.status(400).json({message: "Please fill all fields"})
-    }
-   const userFromDatabase = UsersDatabase.find(user => user.email === email)    
+    const newUser = await pool.query(
+      "INSERT INTO users (name, email, password, contact, address, gender) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, name, email",
+      [name, email, hashedPassword, contact, address, gender]
+    );
 
-   if(!userFromDatabase) {
-    return res.status(400).json({message: "User does not exist"})   
-   }
-   const isPasswordisCorrect = bcrypt.compareSync(password, userFromDatabase.password)
-   if(!isPasswordisCorrect) {
-    return res.status(400).json({message: "Incorrect password"})
-   }
-   const tokens = generateToken(userFromDatabase)
-   return res.status(200).json({
-    message: "User logged in successfully",
-    user:{
-    email: userFromDatabase.email,
-    name: userFromDatabase.name,
-    token: tokens.refreshToken,
-    accessToken: tokens.accessToken
-    }
-   })
+    res.status(201).json({ message: "Account created successfully", user: newUser.rows[0] });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
 
-}
-const verifyUser = (res,req) => {
-    res.status(200).json({
-        message: "User is verified",
-})
-}
+// Login
+exports.loginUserAccount = async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-module.exports = {createUsersAccount,loginUserAccount, verifyUser}
+    const user = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
+    if (!user.rows.length) return res.status(400).json({ message: "Invalid credentials" });
+
+    const isMatch = await bcrypt.compare(password, user.rows[0].password);
+    if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
+
+    const token = jwt.sign(
+      { id: user.rows[0].id, email: user.rows[0].email },
+      jwtSecret,
+      { expiresIn: "1h" }
+    );
+
+    res.json({ token });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+// Middleware to verify JWT
+exports.verifyUser = (req, res) => {
+  res.json({ message: "User verified", user: req.user });
+};

@@ -1,18 +1,15 @@
-const express = require('express')
-const dotenv = require('dotenv').config()
-const app = express()
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
-const userRoutes = require('./routes/userRoutes')
-const authRoutes = require('./routes/authRoutes')
+const app = express();
 
-app.use(express.json())
-app.use('/user', userRoutes)
-app.use('/auth', authRoutes )
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
 
+// Routes
+app.use("/auth", require("./routes/authRoutes"));
 
-app.get('/', ( req , res ) => {
-   res.send('API is running')
-})
-
-const PORT = process.env.PORT || 5000
-app.listen(PORT ,() => console.log(`server is running in port: ${PORT}`))   
+const PORT = 5000;
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
