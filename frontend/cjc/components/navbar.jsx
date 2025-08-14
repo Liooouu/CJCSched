@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
+    /**Fixed */
     <nav className="sticky top-0 z-50 shadow-md">
         <div className='flex flex-row p-4 md:text-lg lg:text-xl text-[#364687] bg-white '>
             <div className='container flex flex-row justify-start items-center gap-4 pl-12'>
