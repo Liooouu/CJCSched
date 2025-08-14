@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+/*Fixed*/
 const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 shadow-md">
