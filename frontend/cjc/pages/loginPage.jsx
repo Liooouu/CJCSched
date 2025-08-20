@@ -1,10 +1,11 @@
-import Navbar from "../components/navbar";
+import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import axios from "axios";
+
 
 export const Login = () => {
     const [showPassword, IsShowPassword] = useState(false);
