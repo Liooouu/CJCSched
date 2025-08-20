@@ -4,32 +4,59 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import { GoogleLogin } from '@react-oauth/google';
 import axios from "axios";
 
 
 export const Login = () => {
-    const [showPassword, IsShowPassword] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
+    const BACKEND_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+    // Email/password login
     const handleLogin = async (e) => {
         e.preventDefault();
+        setError("");
         try {
-            const response = await axios.post("http://localhost:5000/auth/login", { email, password });
-            localStorage.setItem("token", response.data.token); // Save JWT token
+            const response = await axios.post(`${BACKEND_URL}/auth/login`, { email, password });
+            localStorage.setItem("token", response.data.token);
+            localStorage.setItem("user", JSON.stringify(response.data.user));
             navigate("/admin");
         } catch (err) {
+            console.error("Login error:", err.response?.data || err.message);
             setError(err.response?.data?.message || "Login failed");
         }
+    };
+
+    // Google login
+    const handleGoogleSuccess = async (credentialResponse) => {
+        setError("");
+        try {
+            const res = await axios.post(`${BACKEND_URL}/auth/google`, {
+                token: credentialResponse.credential,
+            });
+            localStorage.setItem("token", res.data.token);
+            localStorage.setItem("user", JSON.stringify(res.data.user));
+            navigate("/admin");
+        } catch (err) {
+            console.error("Google login error:", err.response?.data || err.message);
+            setError(err.response?.data?.message || "Google login failed");
+        }
+    };
+
+    const handleGoogleError = () => {
+        setError("Google login failed");
     };
 
     return (
         <>
         <Navbar/>
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-l from-indigo-400 to-indigo-900">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-15 lg:gap-30 w-full max-w-screen-xl p-6 font-montserrat">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-screen-xl p-6 font-montserrat">
 
                 <div className="text-white flex flex-col justify-center items-center text-center">
                     <h1 className="text-3xl lg:text-4xl font-bold mb-4">Enter your account</h1>
@@ -45,11 +72,17 @@ export const Login = () => {
                 <div className="bg-white rounded-2xl p-8 shadow-md w-full max-w-lg mx-auto">
                     <h2 className="text-2xl font-semibold text-center mb-6">Log In</h2>
                     <form onSubmit={handleLogin} className="space-y-4 text-sm lg:text-md">
-                        
-                        <button type="button" className="w-full flex items-center justify-center gap-2 text-lg border rounded-xl border-gray-300 py-2 px-4 rounded-mg hover:bg-gray-100 transition cursor-pointer">
-                            <FcGoogle className="w-5 h-5" />
-                            <span>Log in with Google</span>
-                        </button>
+
+                        {/* Google Login Button - full width, same design */}
+                        <div className="flex justify-center mb-4">
+                            <GoogleLogin
+                                onSuccess={handleGoogleSuccess}
+                                onError={handleGoogleError}
+                                width="100%"       // keep full width
+                                size="large"       // large size
+                                text="continue_with"
+                            />
+                        </div>
 
                         <input 
                             type="email" 
@@ -69,7 +102,7 @@ export const Login = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
                             />
-                            <button type="button" onClick={() => IsShowPassword(!showPassword)} className="absolute inset-y-0 right-3 flex items-center text-gray-500">
+                            <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute inset-y-0 right-3 flex items-center text-gray-500">
                                 {showPassword ? <Eye/> : <EyeOff/>}
                             </button>
                         </div>
@@ -78,7 +111,7 @@ export const Login = () => {
 
                         <div className="text-right text-sm lg:text-md">
                             <div className="text-indigo-500 hover:underline">
-                              <Link to="/messageReset">Forgot password?</Link>  
+                                <Link to="/messageReset">Forgot password?</Link>  
                             </div>
                         </div>
 
