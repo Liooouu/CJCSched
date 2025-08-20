@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
 
-    <nav className="sticky top-0 z-50 shadow-md">
+    <nav className="sticky top-0 z-50 shadow-md bg-white">
         <div className="flex justify-between items-center p-4 md:text-lg lg:text-xl text-[#364687]">
             <div className='flex items-center gap-4 pl-4'>
                 <img src="/LOGO.png" alt="CJCRSG LOGO" className='w-[50px] h-[50px]'/>

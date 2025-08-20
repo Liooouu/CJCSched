@@ -73,15 +73,14 @@ export const Login = () => {
                     <h2 className="text-2xl font-semibold text-center mb-6">Log In</h2>
                     <form onSubmit={handleLogin} className="space-y-4 text-sm lg:text-md">
 
-                        {/* Google Login Button - full width, same design */}
-                        <div className="flex justify-center mb-4">
+                        <div className='w-full'>
                             <GoogleLogin
-                                onSuccess={handleGoogleSuccess}
-                                onError={handleGoogleError}
-                                width="100%"       // keep full width
-                                size="large"       // large size
-                                text="continue_with"
+                            onSuccess={handleGoogleSuccess}
+                            onError={handleGoogleError}
+                            size='large'
+                            theme='outline'
                             />
+
                         </div>
 
                         <input 
