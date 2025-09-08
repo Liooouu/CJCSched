@@ -24,7 +24,7 @@ exports.createUsersAccount = async (req, res) => {
   }
 };
 
-// Manual email/password login
+
 exports.loginUserAccount = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -32,18 +32,25 @@ exports.loginUserAccount = async (req, res) => {
     if (!userQuery.rows.length) return res.status(400).json({ message: "User not found" });
 
     const user = userQuery.rows[0];
-    if (!user.password) return res.status(400).json({ message: "User registered via Google, use Google login" });
 
+    // Compare password
     const match = await bcrypt.compare(password, user.password);
     if (!match) return res.status(400).json({ message: "Incorrect password" });
 
-    const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_TOKEN_SECRET, { expiresIn: "1h" });
+    // Create JWT token
+    const token = jwt.sign(
+      { id: user.id, email: user.email, role: user.role },
+      process.env.JWT_TOKEN_SECRET,
+      { expiresIn: "1h" }
+    );
+
     res.json({ user, token });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Login failed" });
   }
 };
+
 
 // Verify user (protected)
 exports.verifyUser = async (req, res) => {

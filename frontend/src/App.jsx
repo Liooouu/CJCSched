@@ -1,22 +1,28 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
-import AdminPage from '../pages/adminPage';
-import {Signup} from '../pages/signUpPage';
-import {Login} from '../pages/loginPage';
-import { MessageReset } from '../pages/messageResetPage';
-import { VerifyReset } from '../pages/verifyResetPage';
-import { ResetPassword } from '../pages/resetPasswordPage';
+import Navbar from './components/navbar';
+import Footer from './components/footer';
+import AdminPage from './routes/admin/adminPage';
+import { Signup } from './routes/members/signUpPage';
+import { Login } from './routes/members/loginPage';
+import { MessageReset } from './routes/auth/messageResetPage';
+import { VerifyReset } from './routes/auth/VerifyResetPage';
+import { ResetPassword } from './routes/auth/ResetPasswordPage';
+import UserDashboard from './routes/members/userDashboard';
+import AdminLogin from './routes/admin/adminLogin';
+import Visitors from './routes/admin/adminVisitors';
+import Announcements from './routes/admin/adminAnnouncement';
+import Members from './routes/admin/adminMembers';
+import ProtectedRoutes from './components/ProtectedRoutes';
 
 const Home = () => {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <main className="flex justify-center items-center flex-col font-montserrat text-[#364687] lg:text-4xl md:text-3xl font-bold">
         <div className="container flex justify-center items-center flex-col h-[50vh] w-max md:space-y-2 lg:space-y-4">
           <p className="sm:text-2xl lg:text-3xl font-semibold">WELCOME TO </p>
-          <p className='text-xl sm:text-3xl md:text-4xl lg:text-5xl'>CHURCH OF JESUS CHRIST</p>
-          <p className='text-xl sm:text-3xl md:text-4xl lg:text-5xl'>THE RISEN SON OF GOD PHILS. INC.</p>
+          <p className="text-xl sm:text-3xl md:text-4xl lg:text-5xl">CHURCH OF JESUS CHRIST</p>
+          <p className="text-xl sm:text-3xl md:text-4xl lg:text-5xl">THE RISEN SON OF GOD PHILS. INC.</p>
           <p className="sm:text-2xl lg:text-3xl font-semibold">ATTENDANCE SYSTEM</p>
         </div>
         <div>
@@ -33,18 +39,15 @@ const Home = () => {
       <div className="flex sm:flex-row flex-col justify-evenly h-[600px] text-[#364687] lg:text-4xl md:text-3xl font-bold font-montserrat bg-[#364687]/10 mb-3">
         <div className="container flex justify-center items-center flex-col">
           <h2 className="font-light text-2xl md:text-3xl lg:text-4xl">Connect with us:</h2>
-
           <div className="flex flex-row justify-center items-center text-xs font-light">
             <div className="flex flex-col justify-center items-center">
               <img src="/FACEBOOK.png" alt="facebook_icon" className="w-full h-full object-contain" />
               <p className="sm:text-xl">Facebook</p>
             </div>
-
             <div className="flex flex-col justify-center items-center">
               <img src="/GMAIL.png" alt="gmail_icon" className="w-full h-full object-contain" />
               <p className="sm:text-xl">Gmail</p>
             </div>
-
             <div className="flex flex-col justify-center items-center">
               <img src="/CONTACT.png" alt="contact_icon" className="w-full h-full object-contain" />
               <p className="sm:text-xl">Contact</p>
@@ -56,11 +59,12 @@ const Home = () => {
           <div className="flex flex-col h-full justify-evenly">
             <h2 className="text-2xl sm:text-5xl">Mission</h2>
             <div className="container no-wrap p-4">
-              <p className="text-center font-light indent-6 text-[20px]/9">To share the gospel of the kingdom, to make disciples of Christs and to plant in the Philippines and all over the world.</p>
+              <p className="text-center font-light indent-6 text-[20px]/9">
+                To share the gospel of the kingdom, to make disciples of Christs and to plant in the Philippines and all over the world.
+              </p>
             </div>
-
             <h2 className="text-2xl sm:text-5xl">Vision</h2>
-            <div className='container no-wrap p-4'>
+            <div className="container no-wrap p-4">
               <p className="font-light text-[20px]">To bring people to God.</p>
             </div>
           </div>
@@ -75,14 +79,61 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<AdminPage />} />
         <Route path="/messageReset" element={<MessageReset />} />
         <Route path="/verifyReset" element={<VerifyReset />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
+        <Route path="/admin" element={<AdminLogin />} />
+
+              {/* Protected Admin Routes */}
+        <Route
+        path="/adminDashboard"
+        element={
+          <ProtectedRoutes adminOnly={true}>
+            <AdminPage />
+          </ProtectedRoutes>
+        }
+        />
+        <Route
+        path="/adminDashboard/announcements"
+        element={
+          <ProtectedRoutes adminOnly={true}>
+            <Announcements />
+          </ProtectedRoutes>
+        }
+        />
+        <Route
+        path="/adminDashboard/members"
+        element={
+          <ProtectedRoutes adminOnly={true}>
+            <Members />
+          </ProtectedRoutes>
+        }
+        />
+        <Route
+        path="/adminDashboard/visitors"
+        element={
+          <ProtectedRoutes adminOnly={true}>
+            <Visitors />
+          </ProtectedRoutes>
+        }
+        />
+
+
+
+        {/* Protected Member Dashboard */}
+        <Route
+          path="/homepage"
+          element={
+            <ProtectedRoutes>
+              <UserDashboard />
+            </ProtectedRoutes>
+          }
+        />
       </Routes>
     </Router>
   );

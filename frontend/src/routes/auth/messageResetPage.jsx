@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Navbar from "../components/navbar";
-import Footer from '../components/footer'
+import Navbar from "../../components/navbar";
+import Footer from "../../components/footer";
 import { FaArrowLeft } from "react-icons/fa";
 
 export const MessageReset = () => {
