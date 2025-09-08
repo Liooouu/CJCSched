@@ -1,11 +1,5 @@
-<<<<<<<< HEAD:frontend/src/routes/members/loginPage.jsx
 import Navbar from "../../components/navbar";
 import Footer from '../../components/footer';
-========
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
->>>>>>>> 5afe798702cf9a276dbc2af30570e14d87f0e3cd:frontend/pages/loginPage.jsx
-import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
