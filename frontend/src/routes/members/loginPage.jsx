@@ -1,11 +1,17 @@
+<<<<<<<< HEAD:frontend/src/routes/members/loginPage.jsx
 import Navbar from "../../components/navbar";
 import Footer from '../../components/footer';
+========
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
+>>>>>>>> 5afe798702cf9a276dbc2af30570e14d87f0e3cd:frontend/pages/loginPage.jsx
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { GoogleLogin } from '@react-oauth/google';
 import axios from "axios";
+
 
 export const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -81,15 +87,14 @@ export const Login = () => {
                     <h2 className="text-2xl font-semibold text-center mb-6">Log In</h2>
                     <form onSubmit={handleLogin} className="space-y-4 text-sm lg:text-md">
 
-                        {/* Google Login Button - full width, same design */}
-                        <div className="flex justify-center mb-4">
+                        <div className='w-full'>
                             <GoogleLogin
-                                onSuccess={handleGoogleSuccess}
-                                onError={handleGoogleError}
-                                width="100%"       // keep full width
-                                size="large"       // large size
-                                text="continue_with"
+                            onSuccess={handleGoogleSuccess}
+                            onError={handleGoogleError}
+                            size='large'
+                            theme='outline'
                             />
+
                         </div>
 
                         <input 
