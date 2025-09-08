@@ -1,5 +1,5 @@
-import Navbar from "../components/navbar";
-import Footer from '../components/footer';
+import Navbar from "../../components/navbar";
+import Footer from '../../components/footer';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from "react";
@@ -24,7 +24,11 @@ export const Login = () => {
             const response = await axios.post(`${BACKEND_URL}/auth/login`, { email, password });
             localStorage.setItem("token", response.data.token);
             localStorage.setItem("user", JSON.stringify(response.data.user));
-            navigate("/admin");
+
+            if(response.data.user.email === "andreimanacop1@gmail.com"){
+                navigate('/admin')}
+            else navigate('/homepage')
+            
         } catch (err) {
             console.error("Login error:", err.response?.data || err.message);
             setError(err.response?.data?.message || "Login failed");
@@ -33,19 +37,24 @@ export const Login = () => {
 
     // Google login
     const handleGoogleSuccess = async (credentialResponse) => {
+        console.log("Google ID Token:", credentialResponse.credential); // 👈 Log the token
+        // decode first part of token to see claims
+        console.log("Decoded Payload:", JSON.parse(atob(credentialResponse.credential.split('.')[1])));
+
         setError("");
         try {
             const res = await axios.post(`${BACKEND_URL}/auth/google`, {
-                token: credentialResponse.credential,
+            token: credentialResponse.credential,
             });
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("user", JSON.stringify(res.data.user));
-            navigate("/admin");
+            navigate("/homepage");
         } catch (err) {
             console.error("Google login error:", err.response?.data || err.message);
             setError(err.response?.data?.message || "Google login failed");
         }
-    };
+        };
+
 
     const handleGoogleError = () => {
         setError("Google login failed");

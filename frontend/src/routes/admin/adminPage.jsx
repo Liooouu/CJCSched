@@ -1,6 +1,6 @@
 import React from 'react'
-import AdminNavbar from "../components/adminNavbar"
-import Footer from '../components/footer'
+import AdminNavbar from "../../components/adminNavbar"
+import Footer from '../../components/footer'
 
 const AdminPage = () => {
   return (
