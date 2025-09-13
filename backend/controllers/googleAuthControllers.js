@@ -8,7 +8,7 @@ const googleLogin = async (req, res) => {
   const { token } = req.body;
 
   try {
-    // Verify Google token
+   
     const ticket = await client.verifyIdToken({
       idToken: token,
       audience: process.env.GOOGLE_CLIENT_ID,
@@ -18,7 +18,7 @@ const googleLogin = async (req, res) => {
     const email = payload.email;
     const name = payload.name;
 
-    // Find or create user
+   
     let result = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
 
     if (!result.rows.length) {
@@ -31,22 +31,22 @@ const googleLogin = async (req, res) => {
 
     const user = result.rows[0];
 
-    // Create JWT token
+   
     const tokenJWT = jwt.sign(
       { id: user.id, email: user.email },
       process.env.JWT_TOKEN_SECRET,
       { expiresIn: "1h" }
     );
 
-    // OPTIONAL: Set as cookie
+  
     res.cookie("authToken", tokenJWT, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: process.env.NODE_ENV === "development" ,
       sameSite: "strict",
       maxAge: 3600000, // 1h
     });
 
-    // Send token + user in JSON, frontend will handle redirect
+    
     res.status(200).json({
       message: "Google login successful",
       token: tokenJWT,

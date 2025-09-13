@@ -2,8 +2,8 @@ const pool = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-// Register
-exports.createUsersAccount = async (req, res) => {
+
+const createUsersAccount = async (req, res) => {
   const { name, email, password } = req.body;
   try {
     const userExists = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
@@ -25,7 +25,7 @@ exports.createUsersAccount = async (req, res) => {
 };
 
 
-exports.loginUserAccount = async (req, res) => {
+const loginUserAccount = async (req, res) => {
   const { email, password } = req.body;
   try {
     const userQuery = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
@@ -33,11 +33,11 @@ exports.loginUserAccount = async (req, res) => {
 
     const user = userQuery.rows[0];
 
-    // Compare password
+  
     const match = await bcrypt.compare(password, user.password);
     if (!match) return res.status(400).json({ message: "Incorrect password" });
 
-    // Create JWT token
+    
     const token = jwt.sign(
       { id: user.id, email: user.email, role: user.role },
       process.env.JWT_TOKEN_SECRET,
@@ -52,8 +52,8 @@ exports.loginUserAccount = async (req, res) => {
 };
 
 
-// Verify user (protected)
-exports.verifyUser = async (req, res) => {
+
+const verifyUser = async (req, res) => {
   try {
     const userQuery = await pool.query("SELECT * FROM users WHERE id = $1", [req.user.id]);
     if (!userQuery.rows.length) return res.status(404).json({ message: "User not found" });
@@ -64,3 +64,5 @@ exports.verifyUser = async (req, res) => {
     res.status(500).json({ message: "Verification failed" });
   }
 };
+
+module.exports = { createUsersAccount, loginUserAccount, verifyUser };
