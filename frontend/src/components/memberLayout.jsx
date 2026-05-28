@@ -292,7 +292,7 @@ const MemberLayout = ({ children, activeNav = "home", onNavChange, isLoading }) 
       {showBackToTop && !location.pathname.includes("/member/profile") && !lightboxOpen && !modalOpen && !mobileMenuOpen && (
         <button
           onClick={scrollToTop}
-          className={`group fixed z-50 bg-[#4A558F] text-white rounded-full p-3 shadow-lg hover:bg-[#3a4575] transition-all duration-300 ${nearFooter ? 'bottom-24' : 'bottom-6'} left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-6`}
+          className={`group fixed z-50 bg-[#4A558F] text-white rounded-full p-3 shadow-lg hover:bg-[#3a4575] transition-all duration-300 ${nearFooter ? 'bottom-10 md:bottom-16' : 'bottom-6'} right-6`}
           aria-label="Back to top"
         >
           <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 whitespace-nowrap bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
